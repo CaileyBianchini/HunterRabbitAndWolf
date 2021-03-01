@@ -4,6 +4,22 @@
 #include "raylib.h"
 #include "Sprite.h"
 
+inline Actor::Actor()
+{
+    m_globalTransform = new MathLibrary::Matrix3();
+    m_localTransform = new MathLibrary::Matrix3();
+    m_rotation = new MathLibrary::Matrix3();
+    m_translation = new MathLibrary::Matrix3();
+    m_scale = new MathLibrary::Matrix3();
+
+    m_icon = ' ';
+    setLocalPosition(MathLibrary::Vector2(0, 0));
+    m_velocity = MathLibrary::Vector2();
+    m_collisionRadius = 0;
+    m_childCount = 0;
+    m_maxSpeed = 1;
+}
+
 Actor::~Actor()
 {
     delete m_globalTransform;
