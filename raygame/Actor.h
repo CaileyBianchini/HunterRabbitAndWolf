@@ -8,7 +8,7 @@ class Sprite;
 class Actor
 {
 public:
-    Actor() {}
+    Actor();
     ~Actor();
     /// <param name="x">Position on the x axis</param>
     /// <param name="y">Position on the y axis</param>

@@ -1,11 +1,11 @@
 #pragma once
-#include "Actor.h"
+#include "Agent.h"
 
-class Player : public Actor
+class Player : public Agent
 {
 public:
-	Player() : Actor() {}
-	Player(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed);
+	Player() : Agent() {}
+	Player(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, float maxForce = 1);
 	void update(float deltatime) override;
 	void debug() override;
 };
