@@ -47,6 +47,12 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>AI</Filter>
     </ClCompile>
+    <ClCompile Include="RoamBehaviour.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeBehaviour.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -80,6 +86,12 @@
       <Filter>AI</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="RoamBehaviour.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeBehaviour.h">
       <Filter>AI</Filter>
     </ClInclude>
   </ItemGroup>

@@ -150,9 +150,11 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FleeBehaviour.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RoamBehaviour.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -163,8 +165,10 @@
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FleeBehaviour.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RoamBehaviour.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekBehaviour.h" />
     <ClInclude Include="Sprite.h" />
