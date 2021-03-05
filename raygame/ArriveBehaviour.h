@@ -3,5 +3,6 @@
 class ArriveBehaviour :
 	public SteeringBehaviour
 {
+
 };
 
