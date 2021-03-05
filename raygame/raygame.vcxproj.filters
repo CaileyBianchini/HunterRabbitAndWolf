@@ -20,9 +20,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -51,6 +48,18 @@
       <Filter>AI</Filter>
     </ClCompile>
     <ClCompile Include="FleeBehaviour.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueBehaviour.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EvadeBehaviour.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ArriveBehaviour.cpp">
       <Filter>AI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,6 +101,15 @@
       <Filter>AI</Filter>
     </ClInclude>
     <ClInclude Include="FleeBehaviour.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueBehaviour.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="EvadeBehaviour.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+    <ClInclude Include="ArriveBehaviour.h">
       <Filter>AI</Filter>
     </ClInclude>
   </ItemGroup>
