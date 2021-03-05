@@ -4,6 +4,7 @@
 #include "Agent.h"
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
+#include "RoamBehaviour.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -33,20 +34,24 @@ void Game::start()
 	//initialize agents
 	Player* player = new Player(10, 10, 3, "Images/player.png", 5, 5);
 	Agent* enemy = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
-	Agent* enemysPlayer = new Agent(15, 15, 3, "Images/enemy.png", 5, 5);
+	Agent* enemysPlayer = new Agent(15, 15, 2, "Images/enemy.png", 5, 5);
+	Agent* bunny = new Agent(25, 25, .5, "Images/enemy.png", 5, 5);
 
 	//create a new steering behaviour
 	SeekBehaviour* seek = new SeekBehaviour(player);
 	enemy->addBehaviour(seek);
-	FleeBehaviour* flee = new FleeBehaviour(player);
-	SeekBehaviour* seeker = new SeekBehaviour(enemy);
+	FleeBehaviour* flee = new FleeBehaviour(enemy);
+	SeekBehaviour* seeker = new SeekBehaviour(player);
 	enemysPlayer->addBehaviour(flee);
+	RoamBehaviour* wander = new RoamBehaviour(player);
+	bunny->addBehaviour(wander);
 
 	//initalize the scene
 	Scene* scene = new Scene();
 	scene->addActor(player);
 	scene->addActor(enemy);
-	scene->addActor(enemysPlayer);
+	/*scene->addActor(enemysPlayer);*/
+	scene->addActor(bunny);
 	addScene(scene);
 	SetTargetFPS(60);
 }
