@@ -6,13 +6,13 @@
 RoamBehaviour::RoamBehaviour()
 {
 	m_target = nullptr;
-	m_seekForce = 1;
+	setForceScale(1);
 }
 
 RoamBehaviour::RoamBehaviour(Actor* target, float seekForce)
 {
 	m_target = target;
-	m_seekForce = seekForce;
+	setForceScale(1);
 }
 
 MathLibrary::Vector2 RoamBehaviour::calculateForce(Agent* agent)

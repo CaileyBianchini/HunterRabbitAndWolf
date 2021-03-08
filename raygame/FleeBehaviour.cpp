@@ -5,13 +5,13 @@
 FleeBehaviour::FleeBehaviour()
 {
 	m_target = nullptr;
-	m_seekForce = 1;
+	setForceScale(1);
 }
 
 FleeBehaviour::FleeBehaviour(Actor* target, float seekForce)
 {
 	m_target = target;
-	m_seekForce = seekForce;
+	setForceScale(1);
 }
 
 MathLibrary::Vector2 FleeBehaviour::calculateForce(Agent* agent)

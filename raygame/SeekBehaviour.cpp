@@ -5,13 +5,13 @@
 SeekBehaviour::SeekBehaviour()
 {
 	m_target = nullptr;
-	m_seekForce = 1;
+	setForceScale(1);
 }
 
 SeekBehaviour::SeekBehaviour(Actor* target, float seekForce)
 {
 	m_target = target;
-	m_seekForce = seekForce;
+	setForceScale(1);
 }
 
 MathLibrary::Vector2 SeekBehaviour::calculateForce(Agent* agent)
