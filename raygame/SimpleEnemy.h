@@ -3,8 +3,8 @@
 
 enum EnemyState
 {
-	WANDER,
-	SEEK
+	WANDER = 0,
+	SEEK = 1
 };
 
 class RoamBehaviour;
@@ -13,6 +13,7 @@ class SeekBehaviour;
 class SimpleEnemy :
 	public Enemy
 {
+
 	using Enemy::Enemy;
 	bool checkTargetInSight();
 

@@ -12,7 +12,7 @@ public:
         Actor* target, float health = 1, float damage = 1, float maxSpeed = 1, float maxForce = 1);
     void update(float deltaTime) override;
     virtual Actor* getTarget() { return m_target; }
-    virtual void setTarget(Character* agent) { m_target = agent; }
+    virtual void setTarget(Actor* agent) { m_target = agent; }
 
 private:
     Actor* m_target;

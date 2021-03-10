@@ -7,11 +7,6 @@ Agent::Agent() : Actor()
 	m_maxForce = 1;
 }
 
-Agent::~Agent()
-{
-	
-}
-
 Agent::Agent(float x, float y, float collisionRadius, char icon, float maxSpeed, float maxForce) : 
 	Actor(x, y,	collisionRadius, icon, maxSpeed)
 {
@@ -55,5 +50,6 @@ void Agent::addForce(MathLibrary::Vector2 force)
 
 void Agent::addBehaviour(Behaviour* behaviour)
 {
-	m_behaviours.push_back(behaviour);
+	if (behaviour)
+		m_behaviours.push_back(behaviour);
 }

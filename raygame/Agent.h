@@ -8,7 +8,6 @@ class Agent : public Actor
 {
 public:
 	Agent();
-    ~Agent();
     /// <param name="x">Position on the x axis</param>
     /// <param name="y">Position on the y axis</param>
     /// <param name="icon">The symbol that will appear when drawn</param>
@@ -36,6 +35,10 @@ public:
     void addForce(MathLibrary::Vector2 force);
     void addBehaviour(Behaviour* behaviour);
 
+    ///<summary>
+    /// Returns the first behaviour that matches the given type.
+    /// If no behaviour matches the type, returns null.
+    ///</summary>
     template<typename BehaviourType>
     BehaviourType* getBehaviour();
 
@@ -48,13 +51,16 @@ private:
 template<typename BehaviourType>
 inline BehaviourType* Agent::getBehaviour()
 {
+    //Iterate through the list of behaviours
     for (int i = 0; i < m_behaviours.size(); i++)
     {
+        //attaempts to cast behaviout at the current index as the given type
         BehaviourType* behaviour = dynamic_cast<BehaviourType*>(m_behaviours[i]);
 
         if (behaviour)
             return behaviour;
     }
 
+    //If no behaviours were found to match the type, return nullptr
     return nullptr;
 }
