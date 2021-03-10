@@ -3,8 +3,8 @@
 
 enum EnemyState
 {
-	WANDER = 0,
-	SEEK = 1
+	WANDER,
+	SEEK
 };
 
 class RoamBehaviour;
