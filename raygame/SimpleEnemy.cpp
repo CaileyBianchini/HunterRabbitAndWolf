@@ -4,26 +4,36 @@
 bool SimpleEnemy::checkTargetInSight()
 {
 	//Check if target is null. If so return false
+	if (getTarget() == nullptr)
+		return false;
 
 	//Find the direction vector that represents where the target is relative to the enemy
+	MathLibrary::Vector2 direction = getTarget()->getWorldPosition() - getWorldPosition();
 
 	//Find the dot product of the enemy's forward and the direction vector
+	MathLibrary::Vector2 dotProduct = getForward() - direction;
 
 	//Find the angle using the dot product
+	float angle = (float)MathLibrary::Vector2::findAngle(getTarget()->getForward(), direction);
 
 	//Check if that angle is greater than the enemy's viewing angle(any value you see fit is fine)
+	if (angle > 1)
+		//Return if the enemy saw the target
+		return true;
 
-	//Return if the enemy saw the target
 	return false;
 }
 
 void SimpleEnemy::onCollision(Actor* other)
 {
 	//Check to see if the enemy ran into the player
-
-	//If the enemy has run into the player, deal damage to the player
+	if (getWorldPosition() == other->getWorldPosition())
+		//If the enemy has run into the player, deal damage to the player
+		dynamic_cast<Character*>(other)->takeDamage(1);
 
 	//If the player's health is less than 0, set the target to be nullptr
+	if (dynamic_cast<Character*>(other)->getHealth() <= 0)
+		setTarget(nullptr);
 }
 
 void SimpleEnemy::start()
@@ -36,7 +46,7 @@ void SimpleEnemy::start()
 
 	//Initialize member variables
 	m_seek = getBehaviour<SeekBehaviour>();
-	//m_wander = getBehaviour<WanderBehaviour>();
+	m_wander = getBehaviour<RoamBehaviour>();
 
 	//Set the target to be the base class target
 	setTarget(Enemy::getTarget());
