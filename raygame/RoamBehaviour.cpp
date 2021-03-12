@@ -17,14 +17,19 @@ RoamBehaviour::RoamBehaviour(Actor* target, float seekForce)
 
 MathLibrary::Vector2 RoamBehaviour::calculateForce(Agent* agent)
 {
-	MathLibrary::Vector2 rando = MathLibrary::Vector2(cos(rand()), sin(rand())).getNormalized();
-	//Find the direction to move in
-	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize(m_target->getWorldPosition() - agent->getWorldPosition());
-	//Scale the direction vector by the seekForce
-	MathLibrary::Vector2 desiredVelocity = direction + (agent->getForward() * .5);
-	//
-	MathLibrary::Vector2 steeringForce = desiredVelocity / .25;
-
+	//circle center
+	MathLibrary::Vector2 centerCircle = agent->getForward() * circleDistance;
+	//create a vector for the center of the circle while calculating the position of the arrow by adding the offset to it
+	MathLibrary::Vector2 circle = centerCircle * getForceScale();
+	//randomizes the wanderAngle
+	wanderAngle += (rand() * wanderAngle) - (wanderAngle * .5);
+	//This will create a random vector for direction
+	MathLibrary::Vector2 direction = MathLibrary::Vector2(cos(wanderAngle), sin(wanderAngle)).getNormalized();
+	//Scale the direction vector by circleRadious
+	MathLibrary::Vector2 desiredVelocity = (direction * circleRadius) + centerCircle;
+	//subtract current velocity from desired velocity to find sterring force
+	MathLibrary::Vector2 steeringForce = desiredVelocity + circle;
+	steeringForce = steeringForce.getNormalized();
 	return steeringForce;
 }
 

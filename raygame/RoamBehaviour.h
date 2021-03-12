@@ -20,5 +20,8 @@ public:
 private:
 	Actor* m_target;
 	float m_seekForce;
+	float circleDistance = 5;
+	float circleRadius = 5;
+	float wanderAngle = 20;
 };
 
