@@ -17,6 +17,7 @@ RoamBehaviour::RoamBehaviour(Actor* target, float seekForce)
 
 MathLibrary::Vector2 RoamBehaviour::calculateForce(Agent* agent)
 {
+	MathLibrary::Vector2 rando = MathLibrary::Vector2(cos(rand()), sin(rand())).getNormalized();
 	//Find the direction to move in
 	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize(m_target->getWorldPosition() - agent->getWorldPosition());
 	//Scale the direction vector by the seekForce
