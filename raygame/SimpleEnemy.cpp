@@ -1,5 +1,6 @@
 #include "SimpleEnemy.h"
 #include "SeekBehaviour.h"
+#include "RoamBehaviour.h"
 
 bool SimpleEnemy::checkTargetInSight()
 {

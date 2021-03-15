@@ -19,7 +19,7 @@ MathLibrary::Vector2 SeekBehaviour::calculateForce(Agent* agent)
 	//Find the direction to move in
 	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize(m_target->getWorldPosition() - agent->getWorldPosition());
 	//Scale the direction vector by the seekForce
-	MathLibrary::Vector2 desiredVelocity = direction * m_seekForce;
+	MathLibrary::Vector2 desiredVelocity = direction * getForceScale();
 	//subtract current velocity from desired velocity to find sterring force
 	MathLibrary::Vector2 steeringForce = desiredVelocity - agent->getVelocity();
 

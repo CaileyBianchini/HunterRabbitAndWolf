@@ -15,6 +15,9 @@
     <Filter Include="AI">
       <UniqueIdentifier>{3c1cdcc6-e87c-4e2e-891f-7ffab92fb554}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Decisions">
+      <UniqueIdentifier>{8955f30d-bdac-491b-a99c-f24089919ab2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,11 +71,17 @@
     <ClCompile Include="SimpleEnemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ABDecision.cpp">
-      <Filter>AI</Filter>
+    <ClCompile Include="ComplexEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueDecision.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DecisionBehaviour.cpp">
-      <Filter>AI</Filter>
+      <Filter>Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="ABDecision.cpp">
+      <Filter>Decisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,14 +139,20 @@
     <ClInclude Include="SimpleEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Decision.h">
-      <Filter>AI</Filter>
+    <ClInclude Include="ComplexEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueDecision.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ABDecision.h">
-      <Filter>AI</Filter>
+      <Filter>Decisions</Filter>
     </ClInclude>
     <ClInclude Include="DecisionBehaviour.h">
-      <Filter>AI</Filter>
+      <Filter>Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>Decisions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

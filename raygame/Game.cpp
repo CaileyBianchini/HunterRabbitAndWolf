@@ -5,6 +5,10 @@
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
 #include "RoamBehaviour.h"
+#include "DecisionBehaviour.h"
+#include "PursueDecision.h"
+#include "ComplexEnemy.h"
+
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -37,6 +41,13 @@ void Game::start()
 	Agent* enemy = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
 	Agent* enemysPlayer = new Agent(15, 15, 2, "Images/enemy.png", 5, 5);
 	Agent* bunny = new Agent(25, 25, .5, "Images/enemy.png", 5, 5);
+	ComplexEnemy* complexEnemy = new ComplexEnemy(20, 20, 1, "Images/player.png", player, 5, 5);
+
+	//decisions
+	PursueDecision* pursueDecision = new PursueDecision();
+	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);
+
+	complexEnemy->addBehaviour(decisionBehaviour);
 
 	//create a new steering behaviour
 	SeekBehaviour* seek = new SeekBehaviour(player);
@@ -53,6 +64,7 @@ void Game::start()
 	scene->addActor(enemy);
 	/*scene->addActor(enemysPlayer);*/
 	scene->addActor(bunny);
+	scene->addActor(complexEnemy);
 	addScene(scene);
 	SetTargetFPS(60);
 }

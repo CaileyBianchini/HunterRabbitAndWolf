@@ -17,11 +17,11 @@ EvadeBehaviour::EvadeBehaviour(Actor* target, float seekForce)
 MathLibrary::Vector2 EvadeBehaviour::calculateForce(Agent* agent)
 {
 	//Find the direction to move in
-	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize(m_target->getWorldPosition() - agent->getWorldPosition());
+	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize((m_target->getWorldPosition() + m_target->getVelocity()) - agent->getWorldPosition());
 	//Scale the direction vector by the seekForce
-	MathLibrary::Vector2 desiredVelocity = direction * m_seekForce;
+	MathLibrary::Vector2 desiredVelocity = direction * getForceScale();
 	//adds current velocity from desired velocity to get away from sterring force
-	MathLibrary::Vector2 steeringForce = (desiredVelocity - m_target->getVelocity()) + agent->getVelocity();
+	MathLibrary::Vector2 steeringForce = desiredVelocity + agent->getVelocity();
 
 	return steeringForce;
 }

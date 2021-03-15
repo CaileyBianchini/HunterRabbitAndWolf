@@ -6,11 +6,11 @@ class Behaviour
 {
 public:
 	virtual void update(Agent* agent, float deltaTime) = 0;
-	virtual void draw() {};
+	virtual void draw(Agent* agent) {};
 
-	virtual float getForceScale() { return m_forceScale; }
-	virtual float setForceScale(float forceScale) { return m_forceScale = forceScale; }
+	bool getEnabled() { return m_enabled; }
+	void setEnabled(bool enabled) { m_enabled = enabled; }
 
 private:
-	float m_forceScale = 1;
+	bool m_enabled = true;
 };

@@ -152,6 +152,7 @@
     <ClCompile Include="ArriveBehaviour.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="ComplexEnemy.cpp" />
     <ClCompile Include="DecisionBehaviour.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EvadeBehaviour.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PursueBehaviour.cpp" />
+    <ClCompile Include="PursueDecision.cpp" />
     <ClCompile Include="RoamBehaviour.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekBehaviour.cpp" />
@@ -174,6 +176,7 @@
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="ComplexEnemy.h" />
     <ClInclude Include="Decision.h" />
     <ClInclude Include="DecisionBehaviour.h" />
     <ClInclude Include="Enemy.h" />
@@ -182,6 +185,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PursueBehaviour.h" />
+    <ClInclude Include="PursueDecision.h" />
     <ClInclude Include="RoamBehaviour.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekBehaviour.h" />
