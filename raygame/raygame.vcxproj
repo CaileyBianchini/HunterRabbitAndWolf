@@ -146,11 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ABDecision.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="ArriveBehaviour.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="DecisionBehaviour.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EvadeBehaviour.cpp" />
     <ClCompile Include="FleeBehaviour.cpp" />
@@ -165,12 +167,15 @@
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ABDecision.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="ArriveBehaviour.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Decision.h" />
+    <ClInclude Include="DecisionBehaviour.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EvadeBehaviour.h" />
     <ClInclude Include="FleeBehaviour.h" />
