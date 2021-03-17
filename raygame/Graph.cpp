@@ -1,6 +1,8 @@
 #include "Graph.h"
 #include "Node.h"
 #include "Edge.h"
+#include <raylib.h>
+#include <deque>
 
 Graph::Graph(int width, int height, int nodeSize, int nodeSpacing)
 {
@@ -22,6 +24,66 @@ void Graph::update(float deltaTime)
 
 	for (int i = 0; i < m_nodes.size(); i++)
 		m_nodes[i]->update(deltaTime);
+}
+
+void Graph::BFS(int startX, int startY, int goalX, int goalY)
+{
+	Node* start = getNode(startX, startY);
+	Node* goal = getNode(goalX, goalY);
+
+	if (!start || !goal)
+		return;
+
+	start->color = ColorToInt(GREEN);
+	start->visited = true;
+
+	Node* currentNode = start;
+
+	std::deque<Node*> queue;
+	queue.push_front(start);
+
+	while (!queue.empty())
+	{
+		currentNode = queue[0];
+		queue.pop_front();
+
+		if (currentNode == goal)
+		{
+			currentNode->color = ColorToInt(YELLOW);
+			return;
+		}
+
+		for (int i = 0; i < currentNode->edges.size(); i++)
+		{
+			Node* currentEdgeEnd = nullptr;
+
+			if (currentNode == currentNode->edges[i]->connectedNode2)
+				currentEdgeEnd = currentNode->edges[i]->connectedNode1);
+				
+			else
+				currentEdgeEnd = currentEdgeEnd->edges[i]->connectedNode2;
+			
+			if (!currentEdgeEnd->visited)
+			{
+				currentEdgeEnd->color = ColorToInt(RED);
+				currentEdgeEnd->visited = true;
+				queue.push_front(currentEdgeEnd);
+			}
+			
+		}
+	}
+}
+
+Node* Graph::getNode(int xPos, int yPos)
+{
+	if(xPos < 0 || xPos > m_width || yPos < 0 || yPos > m_height)
+		return nullptr;
+
+	for (int i = 0; i < m_nodes.size(); i++)
+	{
+		if (m_nodes[i]->graphPosition == MathLibrary::Vector2(xPos, yPos))
+			return m_nodes[i];
+	}
 }
 
 void Graph::createGraph(int nodeSize, int nodeSpacing)
