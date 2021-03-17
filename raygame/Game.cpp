@@ -8,6 +8,7 @@
 #include "DecisionBehaviour.h"
 #include "PursueDecision.h"
 #include "ComplexEnemy.h"
+#include "Graph.h"
 
 
 bool Game::m_gameOver = false;
@@ -43,7 +44,7 @@ void Game::start()
 	Agent* bunny = new Agent(25, 25, .5, "Images/enemy.png", 5, 5);
 	ComplexEnemy* complexEnemy = new ComplexEnemy(20, 20, 1, "Images/player.png", player, 5, 5);
 
-	//decisions
+	/*decisions*/
 	PursueDecision* pursueDecision = new PursueDecision();
 	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);
 
@@ -58,23 +59,26 @@ void Game::start()
 	RoamBehaviour* wander = new RoamBehaviour(player);
 	bunny->addBehaviour(wander);
 
+	//Path Finding
+	Graph* graph = new Graph(5, 5, 5, 1);
+
+	Scene* pathFinding = new Scene();
+	pathFinding->addActor(graph);
+
 	//initalize the scene
 	Scene* scene = new Scene();
 	scene->addActor(player);
 	scene->addActor(enemy);
 	/*scene->addActor(enemysPlayer);*/
 	scene->addActor(bunny);
-	scene->addActor(complexEnemy);
-	addScene(scene);
+	/*scene->addActor(complexEnemy);*/
+	addScene(pathFinding);
 	SetTargetFPS(60);
 }
 
 void Game::update(float deltaTime)
 {
-	for (int i = 0; i < m_sceneCount; i++)
-	{
-		m_scenes[i]->update(deltaTime);
-	}
+	getCurrentScene()->update(deltaTime);
 }
 
 void Game::draw()
@@ -84,10 +88,7 @@ void Game::draw()
 	BeginMode2D(*m_camera);
 	ClearBackground(BLACK);
 
-	for (int i = 0; i < m_sceneCount; i++)
-	{
-		m_scenes[i]->draw();
-	}
+	getCurrentScene()->draw();
 
 	EndMode2D();
 	EndDrawing();
