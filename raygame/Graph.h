@@ -13,6 +13,7 @@ public:
 	void update(float deltaTime) override;
 	
 	void BFS(int startX, int startY, int goalX, int goalY);
+	void Djikstra(int startX, int startY, int goalX, int goalY);
 
 	Node* getNode(int xPos, int yPos);
 
