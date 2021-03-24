@@ -7,6 +7,7 @@
 #include "RoamBehaviour.h"
 #include "DecisionBehaviour.h"
 #include "PursueDecision.h"
+#include "FleeDecision.h"
 #include "ComplexEnemy.h"
 #include "Graph.h"
 
@@ -44,7 +45,9 @@ void Game::start()
 
 	/*decisions*/
 	PursueDecision* pursueDecision = new PursueDecision();
-	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);
+	FleeDecision* fleeDecision = new FleeDecision();
+	DecisionBehaviour* pursueBehaviour = new DecisionBehaviour(pursueDecision);
+	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);
 
 	//create a new steering behaviour
 	SeekBehaviour* seek = new SeekBehaviour(player);
@@ -53,15 +56,6 @@ void Game::start()
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
 	bunny->addBehaviour(wander);
-
-	//Path Finding
-	Graph* graph = new Graph(10, 10, 10, 1);
-
-	graph->setWorldPostion({ 2, 2 });
-	graph->BFS(0, 0, 9, 0);
-
-	Scene* pathFinding = new Scene();
-	pathFinding->addActor(graph);
 
 	//initalize the scene
 	Scene* scene = new Scene();
@@ -82,7 +76,7 @@ void Game::draw()
 	BeginDrawing();
 
 	BeginMode2D(*m_camera);
-	ClearBackground(BLACK);
+	ClearBackground(DARKBLUE);
 
 	getCurrentScene()->draw();
 

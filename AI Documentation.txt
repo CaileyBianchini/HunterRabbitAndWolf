@@ -1,0 +1,61 @@
+| Cailey Marie Bianchini|
+| :---          	|
+| Hunter, Rabbit, and Wolf |
+|  |
+| Programming class 2022 |
+|March 24, 2021|
+
+
+## I. Requirements
+
+1. Description of Problem
+
+	- **Name**: 
+
+	- **Problem Statement**: 
+	
+	- **Problem Specifications**:  
+
+
+2. Input Information
+- the player will be able to use keys A, D, W, S, and [SPACE]
+
+1.  Output Information
+- A - this always the player to move left
+- D - this always the player to move right
+- W - this always the player to move up
+- S - this always the player to move down
+- [SPACE] - will make the player "Shoot"
+
+
+## II. Errors
+
+    1. Enemies will go off screen
+
+**File**: Game.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
