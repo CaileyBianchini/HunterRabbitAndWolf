@@ -18,6 +18,9 @@
     <Filter Include="Decisions">
       <UniqueIdentifier>{8955f30d-bdac-491b-a99c-f24089919ab2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Extra">
+      <UniqueIdentifier>{5134d532-bd32-4696-b317-094a686f425b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -183,5 +186,18 @@
     <Image Include="Images\enemy.png">
       <Filter>Textures</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\AI Documentation.txt">
+      <Filter>Extra</Filter>
+    </Text>
+    <Text Include="..\..\..\..\Pictures\classes.txt">
+      <Filter>Extra</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\readme.md">
+      <Filter>Extra</Filter>
+    </None>
   </ItemGroup>
 </Project>

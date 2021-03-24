@@ -32,6 +32,12 @@
 
     1. Enemies will go off screen
 
+### III. Classes
+
+
+
+#### IV. made Classes with Lodis Perkins
+
 **File**: Game.cs
 
 **Attributes**
@@ -40,11 +46,102 @@
              Description: 
              Type: 
 
+**File**: ABDesicion.cs
 
+**File**: Agent.cs
 
+**Attributes**
 
+         Name: 
+             Description: 
+             Type: 
 
+**Attributes**
 
+         Name: 
+             Description: 
+             Type: 
+
+**File**: Desicion.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: Behaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+**File**: SteeringBehaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: SeekBehaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: Edge.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: SimpleEnemy.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+**File**: ComplexEnemy.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: Graph.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+**File**: PursueDesicion.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+
+##### V. Premade Classes - by Lodis Perkins
+
+**File**: Actor.cs
+**File**: Bullet.cs
+**File**: Sprite.cs
+**File**: Scene.cs
+**File**: Character.cs
+**File**: Player.cs
+**File**: Enemy.cs
+**File**: Node.cs
 
 
 
