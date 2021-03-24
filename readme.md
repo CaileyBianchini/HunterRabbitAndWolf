@@ -15,7 +15,7 @@ the Seattle Campus of the Academy of Interactive Entertainment.
 
 ## Getting Started
 
-This 
+Go to the realease and download the newest realease. To play you will click the .exe file.  
 
 **raylib links** - [website][rl-website] / [discord][rl-discord] / [reddit][rl-reddit] / [raylib repo][rl-repo] / [api reference][rl-cheatsheet], [examples][rl-examples]
 
