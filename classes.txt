@@ -1,9 +1,8 @@
-Mine - 
+Mine - to type out
 evadebehaviour
 fleebehaviour
 pursuebehaviour
 roambehaviour
-decisionbehaviour
 fleedecision
 
 
