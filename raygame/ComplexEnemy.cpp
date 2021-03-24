@@ -41,6 +41,7 @@ void ComplexEnemy::onCollision(Actor* other)
 	}
 }
 
+//it did not like having an update
 void ComplexEnemy::update(float deltaTime)
 {
 
@@ -53,5 +54,7 @@ bool ComplexEnemy::checkTargetInSight(float angle)
 
 bool ComplexEnemy::checkTargetInRange(float range)
 {
+	if (range > 0)
+		return true;
 	return false;
 }

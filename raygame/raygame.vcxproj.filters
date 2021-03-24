@@ -62,16 +62,10 @@
     <ClCompile Include="EvadeBehaviour.cpp">
       <Filter>AI</Filter>
     </ClCompile>
-    <ClCompile Include="ArriveBehaviour.cpp">
-      <Filter>AI</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SimpleEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ComplexEnemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PursueDecision.cpp">
@@ -90,6 +84,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeDecision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -139,16 +139,10 @@
     <ClInclude Include="EvadeBehaviour.h">
       <Filter>AI</Filter>
     </ClInclude>
-    <ClInclude Include="ArriveBehaviour.h">
-      <Filter>AI</Filter>
-    </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SimpleEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ComplexEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PursueDecision.h">
@@ -170,6 +164,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeDecision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

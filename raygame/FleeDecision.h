@@ -1,11 +1,10 @@
 #pragma once
 #include "ABDecision.h"
-class PursueDecision :
+class FleeDecision :
 	public ABDecision
 {
 public:
 	using ABDecision::ABDecision;
 
-	void makeDecision(Agent* agent,  float deltaTime) override;
+	void makeDecision(Agent* agent, float deltaTime) override;
 };
-
