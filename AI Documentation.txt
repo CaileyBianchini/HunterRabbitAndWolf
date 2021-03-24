@@ -34,11 +34,7 @@
 
 ### III. Classes
 
-
-
-#### IV. made Classes with Lodis Perkins
-
-**File**: Game.cs
+**File**:  EvadeBehaviour.cs
 
 **Attributes**
 
@@ -46,7 +42,43 @@
              Description: 
              Type: 
 
+**File**:  FleeBehaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type:
+**File**:  PursueBehaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type:
+**File**:  RoamBehaviour.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type:
+**File**:  FleeDecision.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type:
+#### IV. made Classes with Lodis Perkins
+
 **File**: ABDesicion.cs
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
 
 **File**: Agent.cs
 
@@ -142,8 +174,8 @@
 **File**: Player.cs
 **File**: Enemy.cs
 **File**: Node.cs
-
-
+**File**: Game.cs
+**File**: DecisionBehaviour.cs
 
 
 

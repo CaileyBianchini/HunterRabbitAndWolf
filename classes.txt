@@ -1,0 +1,21 @@
+Mine - 
+evadebehaviour
+fleebehaviour
+pursuebehaviour
+roambehaviour
+decisionbehaviour
+fleedecision
+
+
+Ours - to type out:
+abdecision
+decision
+steering behaviour
+seekbehaviour
+agent
+behaviour
+edge
+simpleenemy
+complexenemy
+graph
+pursuedecision
