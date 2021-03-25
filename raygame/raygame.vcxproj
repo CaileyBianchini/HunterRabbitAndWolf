@@ -200,8 +200,15 @@
     <ClInclude Include="SteeringBehaviour.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Images\bullet.png" />
-    <Image Include="Images\enemy.png" />
+    <Image Include="Images\bullet.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="Images\enemy.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="Images\hunter.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
     <Image Include="Images\player.png">
       <DeploymentContent>true</DeploymentContent>
     </Image>

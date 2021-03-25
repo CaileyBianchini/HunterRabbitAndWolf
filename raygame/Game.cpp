@@ -4,6 +4,7 @@
 #include "Agent.h"
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
+#include "PursueBehaviour.h"
 #include "RoamBehaviour.h"
 #include "DecisionBehaviour.h"
 #include "PursueDecision.h"
@@ -39,9 +40,9 @@ void Game::start()
 	m_camera->zoom = 1;
 
 	//initialize agents
-	Player* player = new Player(10, 10, 3, "Images/player.png", 5, 5);
+	Player* player = new Player(10, 10, 3, "Images/hunter.png", 5, 5);
 	Agent* enemy = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
-	Agent* bunny = new Agent(25, 25, .5, "Images/enemy.png", 5, 5);
+	Agent* bunny = new Agent(25, 25, .5, "Images/player.png", 5, 5);
 
 	/*decisions*/
 	PursueDecision* pursueDecision = new PursueDecision();
@@ -50,12 +51,20 @@ void Game::start()
 	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);
 
 	//create a new steering behaviour
+	PursueBehaviour* pursue = new PursueBehaviour(player);
 	SeekBehaviour* seek = new SeekBehaviour(player);
-	enemy->addBehaviour(seek);
+	enemy->addBehaviour(pursue);
 	FleeBehaviour* flee = new FleeBehaviour(enemy);
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
 	bunny->addBehaviour(wander);
+
+	//path finding
+
+	Graph* graph = new Graph(10, 10, 10, 1);
+
+	graph->setWorldPostion({ 2, 2 });
+	graph->BFS(0, 0, 9, 0);
 
 	//initalize the scene
 	Scene* scene = new Scene();

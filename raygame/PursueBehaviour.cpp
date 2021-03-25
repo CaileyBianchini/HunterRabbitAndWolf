@@ -16,15 +16,13 @@ PursueBehaviour::PursueBehaviour(Actor* target, float seekForce)
 
 MathLibrary::Vector2 PursueBehaviour::calculateForce(Agent* agent)
 {
-	//Pursue is just seek but you add the target's velocity to the position that's being seeked
-
 	//Find the direction to move in
-	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize((m_target->getWorldPosition() + m_target->getVelocity()) - agent->getWorldPosition());
-	//Scale the direction vector by the seekForce
+	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize
+	((m_target->getWorldPosition() + m_target->getVelocity()) - agent->getWorldPosition());
+	//Scale the direction vector by seekForce
 	MathLibrary::Vector2 desiredVelocity = direction * getForceScale();
-	//subtract current velocity from desired velocity to find sterring force
+	//Subtract current velocity from desired velocity to find steering force
 	MathLibrary::Vector2 steeringForce = desiredVelocity - agent->getVelocity();
-
 	return steeringForce;
 }
 

@@ -1,20 +1,9 @@
-Mine - to type out
-evadebehaviour
-fleebehaviour
-pursuebehaviour
-roambehaviour
-fleedecision
-
-
-Ours - to type out:
-abdecision
-decision
-steering behaviour
+- to type out - 
 seekbehaviour
-agent
-behaviour
-edge
-simpleenemy
-complexenemy
-graph
-pursuedecision
+
+**Attributes**
+
+         Name: 
+             Description: 
+             Type: 
+

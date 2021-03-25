@@ -44,9 +44,6 @@
     <ClCompile Include="Agent.cpp">
       <Filter>AI</Filter>
     </ClCompile>
-    <ClCompile Include="SeekBehaviour.cpp">
-      <Filter>AI</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>AI</Filter>
     </ClCompile>
@@ -95,6 +92,9 @@
     <ClCompile Include="FleeDecision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SeekBehaviour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -114,9 +114,6 @@
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SeekBehaviour.h">
-      <Filter>AI</Filter>
     </ClInclude>
     <ClInclude Include="SteeringBehaviour.h">
       <Filter>AI</Filter>
@@ -175,6 +172,9 @@
     <ClInclude Include="FleeDecision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SeekBehaviour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Images\player.png">
@@ -184,6 +184,9 @@
       <Filter>Textures</Filter>
     </Image>
     <Image Include="Images\enemy.png">
+      <Filter>Textures</Filter>
+    </Image>
+    <Image Include="Images\hunter.png">
       <Filter>Textures</Filter>
     </Image>
   </ItemGroup>

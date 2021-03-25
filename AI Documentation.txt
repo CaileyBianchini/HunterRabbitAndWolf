@@ -1,6 +1,6 @@
 | Cailey Marie Bianchini|
 | :---          	|
-| Hunter, Rabbit, and Wolf |
+| Hunter, Rabbit and Wolf |
 |  |
 | Programming class 2022 |
 |March 24, 2021|
@@ -11,11 +11,12 @@
 1. Description of Problem
 
 	- **Name**: 
-
+	Hunter, Rabbit and Wolf
 	- **Problem Statement**: 
-	
+	Show that you understand AI Behaviours
 	- **Problem Specifications**:  
-
+		-create one or more decision-making behaviours
+		-create one or more behaviours
 
 2. Input Information
 - the player will be able to use keys A, D, W, S, and [SPACE]
@@ -31,6 +32,8 @@
 ## II. Errors
 
     1. Enemies will go off screen
+    2. Bunny will not show for some reason
+    3. for some reason when graph is added it does not like bullets being shot while player is on the graph
 
 ### III. Classes
 
@@ -38,131 +41,371 @@
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: EvadeBehaviour();
+             Description: creates variables
+             Type: public
+
+         Name: EvadeBehaviour(Actor* target, float seekForce = 1);
+             Description: initalizes variables
+             Type: public
+
+         Name: getTarget();
+             Description: returns m_target
+             Type: public Actor*
+
+         Name: setTarget(Actor* target);
+             Description: sets a new value to m_target
+             Type: public void
+
+         Name: calculateForce(Agent* agent) override;
+             Description: this over rides the original calculatingForce to make the character evade the target - one step ahead
+             Type: public MathLibrary::Vector2
+
+         Name: update(Agent* agent, float deltaTme) override;
+             Description: overrides the original Actor update
+             Type: public void
 
 **File**:  FleeBehaviour.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type:
+         Name: FleeBehaviour();
+             Description: creates the variables for this class w/ values
+             Type:public
+
+         Name: FleeBehaviour(Actor* target, float seekForce = 1);
+             Description: initalizes the newly created variables
+             Type: public
+
+         Name: getTarget();
+             Description: returns m_target
+             Type: public Actor*
+
+         Name: setTarget(Actor* target)
+             Description: sets a new value to m_target
+             Type: public void
+
+         Name: calculateForce(Agent* agent) override;
+             Description: overrides the original calculateforce to make the character flee from target
+             Type: public 
+
+         Name: update(Agent* agent, float deltaTime) override;
+             Description: overrides the original 
+             Type: public void
+
 **File**:  PursueBehaviour.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type:
+         Name: PursueBehaviour();
+             Description: creates new variables for this class
+             Type: public
+
+         Name: PursueBehaviour(Actor* target, float seekForce = 1);
+             Description: initalizes the newly created variables
+             Type: public
+
+         Name: getTarget();
+             Description: returns the m_target
+             Type: public Actor*
+
+         Name: setTarget(Actor* target);
+             Description: this sets a new value to m_target
+             Type: public void
+
+         Name: calculateForce(Agent* agent) override;
+             Description: overrides the original to make the character pursue the target - always a step ahead
+             Type: public MathLibrary::Vector2
+
+         Name: update(Agent* agent, float deltaTime) override;
+             Description: overrides the original 
+             Type: public void
+
+
 **File**:  RoamBehaviour.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type:
+         Name: RoamBehaviour();
+             Description: gives value for the class values
+             Type:public
+
+         Name: RoamBehaviour(Actor* target, float seekForce = 1);
+             Description: initializes the variables
+             Type: public
+
+         Name: getTarget();
+             Description: returns m_target
+             Type: public Actor*
+
+         Name: setTarget(Actor* agent, float deltaTime);
+             Description: sets a new value to m_target
+             Type: public void
+
+         Name: calculateForce(Agent* agent) override;
+             Description: this overrides the original to make a random point for the character
+             Type: public MathLibrary::Vector2
+
+         Name: update(Agent* agent, float deltaTime) override;
+             Description: overrides original
+             Type: public void
+
 **File**:  FleeDecision.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type:
+         Name: FleeBehaviour();
+             Description: gives value to new variables
+             Type:public
+
+         Name: FleeBehaviour(Actor* target, float seekForce = 1);
+             Description: initalizes the variables
+             Type: public
+
+         Name: getTarget();
+             Description: returns m_target
+             Type: public Actor*
+
+         Name: setTarget(Actor* agent, float deltaTime);
+             Description: sets a new value to m_target
+             Type: public void
+
+         Name: calculateForce(Agent* agent) override;
+             Description: this is a simple caclculation for the character to flee from the target
+             Type: public MathLibrary::Vector2
+
+         Name: update(Agent* agent, float deltaTime) override;
+             Description: over ride of the original
+             Type: public void 
+
 #### IV. made Classes with Lodis Perkins
 
 **File**: ABDesicion.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: ABDecision(Decision* leftChild = nullptr, Decision* rightChild = nullptr);
+             Description: initalizes the variables created
+             Type: public
+
+         Name: makeDecision(Agent* agent, float deltaTime) override;
+             Description: checks the condition and transitions to a different desicion based on the return value
+             Type: public virtual void
+
+         Name: checkCondition(Agent* agent, float deltaTime);
+             Description: checks if a certain condition has been met and returns the result
+             Type: public virual bool
 
 **File**: Agent.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: Agent();
+             Description: gives value to m_force and m_maxForce
+             Type: public
 
-**Attributes**
+         Name: Agent(float x, float y, float collisionRadius, char icon, float maxSpeed, float maxForce);
+             Description: gives value to x, y, collisionRadius, icon, maxSpeed, maxForce
+             Type: public
 
-         Name: 
-             Description: 
-             Type: 
+         Name: Agent(float x, float y, float collisionRadius, Sprite* sprite, float maxSpeed, float maxForce);
+             Description: gives value to x, y, collisionRadius, sprite, maxSpeed, maxForce
+             Type: public
+
+         Name: Agent(float x, float y, float collisionRadius, const char* spriteFilePath, float maxSpeed, float maxForce);
+             Description: gives value to x, y, collisionRadius, spriteFilePath, maxSpeed, maxForce
+             Type: public
+
+         Name: update(float deltaTime) override;
+             Description: overrides the original 
+             Type: public void
+
+         Name: getMaxForce()
+             Description: returns m_maxForce value
+             Type: public float
+
+         Name: setMaxForce(float maxForce)
+             Description: sets the value for m_maxForce
+             Type: public void
+
+         Name: addForce(MathLibrary::Vector2 force);
+             Description: adds the given force force to the total force that is being applied to the agent
+             Type: public void
+
+         Name: addBehaviour(Behaviour* behaviour);
+             Description: adds the given behaviour to the agent
+             Type: public void
+
+         Name: getBehaviour();
+             Description: returns the first behaviour that matches the given type. If no behaviour matches the type, returns null.
+             Type: public template<typename BehaviourType> BehaviourType*
 
 **File**: Desicion.cs
 
 **Attributes**
+Abstract class for all decisions
 
-         Name: 
-             Description: 
-             Type: 
+         Name: makeDecision(Agent* agent, float deltaTime) = 0;
+             Description: this is made so it can be over ridden 
+             Type: public virtual void
 
 **File**: Behaviour.cs
+Abstract class for all behaviours
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: update(Agent* agent, float deltaTime) = 0;
+             Description: an update with agent so that it can b over ridden
+             Type: public virtual void
+
+         Name: draw(Agent* agent)
+             Description: a draw function made to be over ridden
+             Type: public virtual void
+
+         Name: getEnabled()
+             Description: returns m_enabled
+             Type: public bool
+
+         Name: setEnabled(bool enabled)
+             Description: helps set the value
+             Type: public void
+
 **File**: SteeringBehaviour.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: calculateForce(Agent* owner) = 0;
+             Description: the original calculateforce that gives a math calculation for where characters should steer
+             Type: public virtual MathLibrary::Vector2
 
-**File**: SeekBehaviour.cs
+         Name: getForceScale()
+             Description: returns m_forceScale
+             Type: public virtual float
 
-**Attributes**
-
-         Name: 
-             Description: 
-             Type: 
+         Name: setForceScale(flaot forceScale)
+             Description: sets the m_forceScale a new value
+             Type: public virtual void
 
 **File**: Edge.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: Edge(Node* node1, Node* node2);
+             Description:  grabs the two nodes for start and end
+             Type: public
+
+         Name: draw() override;
+             Description: this overrides the original draw so that nodes are drawn instead
+             Type: public void
+
+         Name: update(float deltaTime) override
+             Description: a override of an original
+             Type: public void
 
 **File**: SimpleEnemy.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: Enemy::Enemy;
+             Description: this will make it so we don't have to rewrite everything from enemy
+             Type: using
+
+         Name: checkTargetInSight();
+             Description: this will change the value from flase to true if the target is in fact in sight
+             Type: public bool
+
+         Name: onCollision(Actor* other) override;
+             Description: this is an override that appliued what happens when the character gets onto a col.lision target
+             Type: public void
+
+         Name: start() override;
+             Description: this grabs m_seek and m_wander
+             Type: public void
+
+         Name: setTarget(Actor* target) override;
+             Description: sets the target 
+             Type: public void
+
 **File**: ComplexEnemy.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: Enemy::Enemy
+             Description: this will make it so we don't have to rewrite everything from enemy
+             Type: using
+
+         Name: start() override;
+             Description: this overrides the enemies start
+             Type: public void
+
+         Name: setTarget(Actor* target) override;
+             Description: this sets a target for the complex enemy
+             Type: public void
+
+         Name: setTarget(Actor* target) override;
+             Description: sets the target 
+             Type: public void
+
+         Name: onCollision(Actor* other) override;
+             Description: this is an override that appliued what happens when the character gets onto a col.lision target
+             Type: public void
+
+         Name: getRoam()
+             Description: returns m_roamBehaviour
+             Type: public RoamBehaviour*
+
+         Name: getPursue()
+             Description: returns m_pursueBehaviour
+             Type: public PursueBehaviour*
+
+         Name: getEvade()
+             Description: returns m_evadeBehaviour 
+             Type: public EvadeBehaviour*
+
+         Name: update(float deltaTime) override;
+             Description: override of the original update
+             Type: public void
+
+         Name: checkTargetInSight(float angle =2);
+             Description: this will return true or false if the target is in sight
+             Type: public bool
+
+         Name: checkTargetInRange(float range);
+             Description: this will return true or false if the target is in well range AROUND the character
+             Type: public bool
 
 **File**: Graph.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
+         Name: Graph(int width, int height, int nodeSize, int nodeSpacing);
+             Description: this gives size for the graph and the size of the nodes and the spacing in between
+             Type: public
+
+         Name: draw() override
+             Description: and override that draws nodes
+             Type: public void
+
+         Name: update(float deltaTime) override
+             Description: an override of the original update
+             Type: public void
+
+         Name: BFS(int startX, int startY, int goalX, int goalY);
+             Description: this will try to find 
              Type: 
+
 
 **File**: PursueDesicion.cs
 
 **Attributes**
 
-         Name: 
-             Description: 
-             Type: 
+         Name: ABDecision::ABDecision
+             Description: so I don't have to rewrite everything from ABDecision
+             Type: using
+
+         Name: madeDecision(Agent* agent, float deltaTime) override;
+             Description: this will switch the different behaviours for the situation
+             Type: public void
 
 ##### V. Premade Classes - by Lodis Perkins
 
