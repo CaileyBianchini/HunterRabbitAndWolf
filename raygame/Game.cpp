@@ -67,7 +67,6 @@ void Game::start()
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
 	bunny->addBehaviour(flee);
-	bunny->addBehaviour(fleeEnemy);
 
 	//path finding
 
