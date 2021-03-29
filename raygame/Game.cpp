@@ -11,7 +11,7 @@
 #include "FleeDecision.h"
 #include "ComplexEnemy.h"
 #include "Graph.h"
-
+#include "Enemy.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -19,6 +19,7 @@ int Game::m_sceneCount = 0;
 int Game::m_currentSceneIndex = 0;
 int Game::m_screenWidth = 1024;
 int Game::m_screenHeight = 760;
+int change = 0;
 
 Game::Game()
 {
@@ -41,23 +42,32 @@ void Game::start()
 
 	//initialize agents
 	Player* player = new Player(10, 10, 3, "Images/hunter.png", 5, 5);
-	Agent* enemy = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
-	Agent* bunny = new Agent(25, 25, .5, "Images/player.png", 5, 5);
+
+	Agent* bunnyName = new Agent(20, 20, 1, "bunny", 5, 5);
+	Agent* bunny = new Agent(20, 20, 1, "Images/player.png", 5, 5);
+	bunny->addChild(bunnyName);
+
+	Agent* wolfName = new Agent(20, 20, 1, "wolf", 5, 5);
+	Agent* wolf = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
+	wolf->addChild(wolfName);
+	
 
 	/*decisions*/
-	PursueDecision* pursueDecision = new PursueDecision();
+	/*PursueDecision* pursueDecision = new PursueDecision();
 	FleeDecision* fleeDecision = new FleeDecision();
 	DecisionBehaviour* pursueBehaviour = new DecisionBehaviour(pursueDecision);
-	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);
+	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);*/
 
 	//create a new steering behaviour
 	PursueBehaviour* pursue = new PursueBehaviour(player);
 	SeekBehaviour* seek = new SeekBehaviour(player);
-	enemy->addBehaviour(pursueBehaviour);
-	FleeBehaviour* flee = new FleeBehaviour(enemy);
+	wolf->addBehaviour(pursue);
+	FleeBehaviour* flee = new FleeBehaviour(player);
+	FleeBehaviour* fleeEnemy = new FleeBehaviour(wolf);
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
-	bunny->addBehaviour(wander);
+	bunny->addBehaviour(flee);
+	bunny->addBehaviour(fleeEnemy);
 
 	//path finding
 
@@ -69,8 +79,8 @@ void Game::start()
 	//initalize the scene
 	Scene* scene = new Scene();
 	scene->addActor(player);
-	scene->addActor(enemy);
 	scene->addActor(bunny);
+	scene->addActor(wolf);
 	addScene(scene);
 	SetTargetFPS(60);
 }
@@ -78,6 +88,7 @@ void Game::start()
 void Game::update(float deltaTime)
 {
 	getCurrentScene()->update(deltaTime);
+	change++;
 }
 
 void Game::draw()
@@ -85,7 +96,7 @@ void Game::draw()
 	BeginDrawing();
 
 	BeginMode2D(*m_camera);
-	ClearBackground(DARKBLUE);
+	ClearBackground(BLUE);
 
 	getCurrentScene()->draw();
 
