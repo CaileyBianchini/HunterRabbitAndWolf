@@ -162,6 +162,7 @@
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="PathFindingBehaviour.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PursueBehaviour.cpp" />
     <ClCompile Include="PursueDecision.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="PathFindingBehaviour.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PursueBehaviour.h" />
     <ClInclude Include="PursueDecision.h" />

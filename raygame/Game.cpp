@@ -53,7 +53,7 @@ void Game::start()
 	//create a new steering behaviour
 	PursueBehaviour* pursue = new PursueBehaviour(player);
 	SeekBehaviour* seek = new SeekBehaviour(player);
-	enemy->addBehaviour(pursue);
+	enemy->addBehaviour(pursueBehaviour);
 	FleeBehaviour* flee = new FleeBehaviour(enemy);
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
