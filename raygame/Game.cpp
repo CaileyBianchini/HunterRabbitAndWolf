@@ -45,8 +45,8 @@ void Game::start()
 	//initialize agents
 	Player* player = new Player(10, 10, 3, "Images/hunter.png", 5, 5);
 
-	Agent* bunnyName = new Agent(15, 15, 1, "bunny", 5, 5);
-	Agent* bunny = new Agent(15, 15, 1, "Images/player.png", 5, 5);
+	Agent* bunnyName = new Agent(20, 20, 1, "bunny", 5, 5);
+	Agent* bunny = new Agent(20, 20, 1, "Images/player.png", 5, 5);
 	bunny->addChild(bunnyName);
 
 	Agent* wolfName = new Agent(20, 20, 1, "wolf", 5, 5);
@@ -62,8 +62,12 @@ void Game::start()
 
 	//create a new steering behaviour
 	PursueBehaviour* pursue = new PursueBehaviour(player);
+	SeekBehaviour* seek = new SeekBehaviour(player);
 	wolf->addBehaviour(pursue);
 	FleeBehaviour* flee = new FleeBehaviour(player);
+	FleeBehaviour* fleeEnemy = new FleeBehaviour(wolf);
+	SeekBehaviour* seeker = new SeekBehaviour(player);
+	RoamBehaviour* wander = new RoamBehaviour(player);
 	bunny->addBehaviour(flee);
 
 	//path finding
