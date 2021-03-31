@@ -13,5 +13,7 @@ public:
 	float cost;
 	void draw() override;
 	void update(float deltaTime) override;
+
+	Node* target;
 };
 

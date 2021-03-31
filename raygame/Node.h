@@ -16,5 +16,12 @@ public:
 	bool visited;
 	void draw() override;
 	void update(float deltaTime) override;
+
+
+	MathLibrary::Vector2 position;
+	std::vector<Edge> connections;
+	float gScore;
+
+	Node* previous;
 };
 

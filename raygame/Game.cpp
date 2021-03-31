@@ -21,6 +21,7 @@ int Game::m_screenWidth = 1024;
 int Game::m_screenHeight = 760;
 int change = 0;
 
+
 Game::Game()
 {
 	m_gameOver = false;
@@ -28,6 +29,7 @@ Game::Game()
 	m_camera = new Camera2D();
 	m_currentSceneIndex = 0;
 	m_sceneCount = 0;
+	m_instance = this;
 }
 
 void Game::start()

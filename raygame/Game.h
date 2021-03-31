@@ -1,11 +1,42 @@
 #pragma once
 #include "Scene.h"
+#include "Graph.h"
+#include "Node.h"
+#include <Vector2.h>
 class Camera2D;
 
-static class Game
+static class Game : public Scene
 {
 public:
+    /// <summary>
+    /// A enumerator of tile types.
+    /// MODIFY this list with any new tiles needed.
+    /// The keys are not ordered.
+    /// </summary>
+    enum class TileKey {
+        OPEN,
+        WALL,
+        MUD,
+        GHOST
+    };
+
+    /// <summary>
+    /// A single space in a Maze.
+    /// </summary>
+    struct Tile {
+        int x;
+        int y;
+        float cost = 1.0f;
+        Actor* actor = nullptr;
+        Graph::Node* node = nullptr;
+    };
+
+    static const int WIDTH = 28;
+    static const int HEIGHT = 31;
+    static const int TILE_SIZE = 32;
+
     Game();
+
     /// <summary>
     /// Returns the scene at the index given.
     /// Returns an empty scene if the index is out of bounds
@@ -14,6 +45,7 @@ public:
     /// <returns></returns>
     static Scene* getScene(int index);
 
+    static Game* getInstance() { return m_instance; }
 
     /// <summary>
     /// Returns the scene that is at the index of the 
@@ -84,4 +116,6 @@ private:
     static int m_currentSceneIndex;
     static int m_screenHeight;
     static int m_screenWidth;
+
+    static Game* m_instance;
 };
