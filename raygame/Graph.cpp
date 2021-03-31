@@ -191,7 +191,7 @@ Node* Graph::findPath(Node* start, Node* end)
 
 void Graph::drawGraph(Node* start)
 {
-	std::deque<Node*>* drawnList = new std::deque<Node*>();
+	Node* drawnList;
 	drawConnectedNodes(start, drawnList);
 	delete drawnList;
 }
