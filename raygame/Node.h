@@ -1,6 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include <vector>
+#include <deque>
+#include <Vector2.h>
 
 class Edge;
 
@@ -17,6 +19,7 @@ public:
 	void draw() override;
 	void update(float deltaTime) override;
 
+	void begin();
 
 	MathLibrary::Vector2 position;
 	std::vector<Edge> connections;

@@ -28,7 +28,7 @@ public:
         int y;
         float cost = 1.0f;
         Actor* actor = nullptr;
-        Graph::Node* node = nullptr;
+        Node* node = nullptr;
     };
 
     static const int WIDTH = 28;

@@ -3,6 +3,9 @@
 #include "Edge.h"
 #include <raylib.h>
 #include <deque>
+#include <vector>
+#include <Vector2.h>
+
 
 Graph::Graph(int width, int height, int nodeSize, int nodeSpacing)
 {
@@ -144,7 +147,7 @@ Node* Graph::findPath(Node* start, Node* end)
 	std::deque<Node*> queue;
 
 	if (!starter || !goal)
-		return queue;
+		return /*queue*/;
 
 	starter->color = ColorToInt(GREEN);
 	starter->visited = true;
@@ -161,7 +164,7 @@ Node* Graph::findPath(Node* start, Node* end)
 		if (currentNode == goal)
 		{
 			currentNode->color = ColorToInt(YELLOW);
-			return queue;
+			return /*queue*/;
 		}
 
 		for (int i = 0; i < currentNode->edges.size(); i++)
@@ -209,10 +212,10 @@ void Graph::drawNode(Node* node, int color)
 	DrawText(buffer, (int)node->position.x, (int)node->position.y, 24, RAYWHITE);
 }
 
-void Graph::drawConnectedNodes(Node* node, std::deque<Node*>* drawnList)
+void Graph::drawConnectedNodes(Node* node, Node* drawnList)
 {
-	//drawNode(node);
-	drawnList->push_back(node);
+	drawNode(node);
+	/*drawnList.push_back(node);*/
 
 	//For each Edge in this node's connections
 	for (Edge e : node->connections) {
