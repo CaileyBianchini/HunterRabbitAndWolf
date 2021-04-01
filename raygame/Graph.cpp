@@ -226,9 +226,5 @@ void Graph::drawConnectedNodes(Node* node, Node* drawnList)
 		static char buffer[10];
 		sprintf_s(buffer, "%.0f", e.cost);
 		DrawText(buffer, (int)costPos.x, (int)costPos.y, 16, RAYWHITE);
-		//Draw the target node
-		if (std::find(drawnList->begin(), drawnList->end(), e.target) == drawnList->end()) {
-			drawConnectedNodes(e.target, drawnList);
-		}
 	}
 }
