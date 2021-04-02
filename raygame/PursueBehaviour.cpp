@@ -22,7 +22,7 @@ MathLibrary::Vector2 PursueBehaviour::calculateForce(Agent* agent)
 	//Scale the direction vector by seekForce
 	MathLibrary::Vector2 desiredVelocity = direction * getForceScale();
 	//Subtract current velocity from desired velocity to find steering force
-	MathLibrary::Vector2 steeringForce = desiredVelocity - agent->getVelocity();
+	MathLibrary::Vector2 steeringForce = desiredVelocity + agent->getVelocity();
 	return steeringForce;
 }
 

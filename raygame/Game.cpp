@@ -53,29 +53,31 @@ void Game::start()
 	Agent* wolf = new Agent(20, 20, 1, "Images/enemy.png", 5, 5);
 	wolf->addChild(wolfName);
 	
+	Agent* random = new Agent(5, 5, 1, "Images/player.png", 5, 5);
 
 	/*decisions*/
-	/*PursueDecision* pursueDecision = new PursueDecision();
+	PursueDecision* pursueDecision = new PursueDecision();
 	FleeDecision* fleeDecision = new FleeDecision();
 	DecisionBehaviour* pursueBehaviour = new DecisionBehaviour(pursueDecision);
-	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);*/
+	DecisionBehaviour* fleeBehaviour = new DecisionBehaviour(fleeDecision);
 
 	//create a new steering behaviour
 	PursueBehaviour* pursue = new PursueBehaviour(player);
 	SeekBehaviour* seek = new SeekBehaviour(player);
-	wolf->addBehaviour(pursue);
+	wolf->addBehaviour(pursueBehaviour); 
 	FleeBehaviour* flee = new FleeBehaviour(player);
 	FleeBehaviour* fleeEnemy = new FleeBehaviour(wolf);
 	SeekBehaviour* seeker = new SeekBehaviour(player);
 	RoamBehaviour* wander = new RoamBehaviour(player);
-	bunny->addBehaviour(flee);
+	bunny->addBehaviour(fleeBehaviour);
+	RoamBehaviour wander = new RoamBehaviour(player);
 
 	//path finding
 
-	Graph* graph = new Graph(10, 10, 10, 1);
+	/*Graph* graph = new Graph(10, 10, 10, 1);
 
 	graph->setWorldPostion({ 2, 2 });
-	graph->BFS(0, 0, 9, 0);
+	graph->BFS(0, 0, 9, 0);*/
 
 	//initalize the scene
 	Scene* scene = new Scene();
